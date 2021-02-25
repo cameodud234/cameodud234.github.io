@@ -1,0 +1,95 @@
+body{
+    background-image: url(../images/wallpaper5.jpg);
+    background-color: rgb(207, 207, 207);
+    margin: 0;
+}
+.header-elem{
+    color: black;
+    margin: auto;
+    text-align: center;
+    border-radius: 25px;
+    min-width: 200px;
+    max-width: 200px;
+}
+#main-title{
+    background-color: ghostwhite;
+}
+#tool-bar{
+    background-color: ghostwhite;
+    border-radius: 25px;
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+    margin-top: 20px;
+    padding: 5px;
+    max-width: 150px;
+    min-width: 150px;
+}
+.tool-bar-elem{
+    padding: 10px;
+    text-decoration: none;
+    color: rgb(77, 77, 255);
+    border-radius: 25px;
+}
+.tool-bar-elem:hover{
+    background-color: rgb(78, 78, 78);
+    color: ghostwhite
+}
+.tool-bar-elem:active{
+    color: rgb(12, 199, 5);
+}
+.body-elem{
+    margin:auto;
+    border-radius: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0.5%;
+    background-color: ghostwhite;
+    width: 40%;
+    height: 40%;
+    max-width: 600px;
+    max-height: 600px;
+    min-width: 500px;
+}
+.body-elem h2{
+    text-align: center;
+}
+.body-elem p{
+    text-align: center;
+}
+.body-elem-list{
+    padding: 10px;
+    margin: auto;
+    width: 60%;
+    height: 60%;
+}
+.body-elem-list-link{
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(77, 77, 255);
+    border-radius: 25px;
+}
+.body-elem-list-link:hover{
+    color: rgb(128, 62, 0);
+}
+.body-elem-list-link:active{
+    color: rgb(12, 199, 5);
+}
+#main-page-canvas{
+    background-color: black;
+    min-width: 200px;
+    min-height: 200px;
+    width: 200px;
+    height: 200px;
+}
+#main-page-graphic-div{
+    text-align: center;
+}
+#game-div{
+    text-align: center;
+}
+#game-box{
+    background-color: black;
+    max-width: 500px;
+    max-height: 500px;
+}
