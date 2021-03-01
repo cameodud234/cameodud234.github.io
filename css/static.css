@@ -75,14 +75,16 @@ body{
 .body-elem-list-link:active{
     color: rgb(12, 199, 5);
 }
-#main-page-canvas{
+#main-page-canvas-1{
     background-color: black;
-    min-width: 200px;
-    min-height: 200px;
-    width: 200px;
-    height: 200px;
 }
-#main-page-graphic-div{
+#main-page-canvas-2{
+    background-color: black;
+}
+#main-page-graphic-div-1{
+    text-align: center;
+}
+#main-page-graphic-div-2{
     text-align: center;
 }
 #game-div{

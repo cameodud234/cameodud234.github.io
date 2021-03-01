@@ -1,0 +1,95 @@
+let randInt = (begin, end) => {
+    let x = Math.floor( ((end - begin)*Math.random()) + begin );
+    return x;
+}
+
+let randomBall = (window, posSet, overlapBool) => {
+    if(!window.getContext){ throw new Error("window needs to be from canvas"); }
+    
+    let radius = randInt(10,20);
+    let ctx = window.getContext("2d");
+
+    let minXPos = 0 + radius;
+    let maxXPos = window.width - radius;
+
+    let minYPos = 0 + radius;
+    let maxYPos = window.height - radius;
+
+    let X = randInt(minXPos, maxXPos);
+    let Y = randInt(minYPos, maxYPos);
+
+    // checks if sufficient distance between adjacent
+    // center points
+    let moveIntersect = (x,y,arr)=>{
+        let d = Math.sqrt(Math.pow(arr[0] - x, 2) + Math.pow(arr[1] - y, 2));
+        if(d < radius + arr[2]){
+            return true;
+        }
+        return false;
+    }
+
+    // checks if (x,y) is in moveSet
+    let moveCheck = (x,y)=>{
+        if(posSet.length != 0){
+            for(let i = 0; i < posSet.length; i++){
+                let tmp = posSet[i];
+                if(tmp[0] === x && tmp[1] === y){
+                    return false;
+                }
+                else if(moveIntersect(x,y,tmp)){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    // overlapBool allows different circles to overlap
+    if(!overlapBool){
+        if(!moveCheck(X,Y)){ return; }
+    }
+    // console.log(`radius: ${radius}, minPoint: (${minXPos},${minYPos}), minPoint: (${maxXPos},${maxYPos})`);
+    // console.log(`radius: ${radius}, minPoint: (${X},${Y})`);
+
+
+    ctx.beginPath();
+    ctx.arc(X, Y, radius , 0, 2 * Math.PI, false);
+
+    let r = randInt(50,255);
+    let b = randInt(50,255);
+    let g = randInt(50, 255);
+
+    ctx.fillStyle = 'rgb(' + r + ','  + b + ',' + g + ')';
+    ctx.fill();
+    posSet.push([X, Y, radius]);
+}
+
+
+
+let process = () => {
+
+    const time = 1000;
+    
+    let window1 = document.getElementById("main-page-canvas-1");
+    let moveSet1 = [];
+
+    setInterval(()=>{
+        randomBall(window1, moveSet1, false);
+    }, time);
+
+    let window2 = document.getElementById("main-page-canvas-2");
+    let moveSet2 = [];
+    setInterval(()=>{
+        randomBall(window2, moveSet2, true);
+    }, time);
+}
+
+
+
+
+try{
+    process();
+}
+catch(err){
+    console.error(err);
+}
