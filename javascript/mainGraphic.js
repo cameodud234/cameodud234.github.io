@@ -51,7 +51,7 @@ let randomBall = (window, posSet, overlap) => {
     }
     // console.log(`radius: ${radius}, minPoint: (${minXPos},${minYPos}), minPoint: (${maxXPos},${maxYPos})`);
     // console.log(`radius: ${radius}, minPoint: (${X},${Y})`);
-    console.log(`posSet: ${posSet}`);
+    //console.log(`posSet: ${posSet}`);
 
     ctx.beginPath();
     ctx.arc(X, Y, radius , 0, 2 * Math.PI, false);
