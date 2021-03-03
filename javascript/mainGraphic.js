@@ -3,9 +3,9 @@ let randInt = (begin, end) => {
     return x;
 }
 
-let randomBall = (window, posSet, overlapBool) => {
+let randomBall = (window, posSet, overlap) => {
     if(!window.getContext){ throw new Error("window needs to be from canvas"); }
-    
+
     let radius = randInt(10,20);
     let ctx = window.getContext("2d");
 
@@ -44,13 +44,14 @@ let randomBall = (window, posSet, overlapBool) => {
         return true;
     }
 
-    // overlapBool allows different circles to overlap
-    if(!overlapBool){
+    // overlap allows different circles to overlap
+    if(!overlap){
         if(!moveCheck(X,Y)){ return; }
+        posSet.push([X, Y, radius]);
     }
     // console.log(`radius: ${radius}, minPoint: (${minXPos},${minYPos}), minPoint: (${maxXPos},${maxYPos})`);
     // console.log(`radius: ${radius}, minPoint: (${X},${Y})`);
-
+    console.log(`posSet: ${posSet}`);
 
     ctx.beginPath();
     ctx.arc(X, Y, radius , 0, 2 * Math.PI, false);
@@ -61,7 +62,6 @@ let randomBall = (window, posSet, overlapBool) => {
 
     ctx.fillStyle = 'rgb(' + r + ','  + b + ',' + g + ')';
     ctx.fill();
-    posSet.push([X, Y, radius]);
 }
 
 
@@ -83,7 +83,6 @@ let process = () => {
         randomBall(window2, moveSet2, true);
     }, time);
 }
-
 
 
 
