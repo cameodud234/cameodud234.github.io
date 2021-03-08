@@ -1,4 +1,4 @@
-import {randomBall} from "./lib/randLib";
+import {randomBall} from "./lib/randLib.mjs";
 
 let process = () => {
 
