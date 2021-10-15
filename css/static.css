@@ -17,6 +17,11 @@ body{
     max-width: 150px;
     min-width: 150px;
 }
+#quiztor-non_github{
+    list-style-type: none;
+}
+#main-bio.p{
+} 
 #main-page-canvas-1{
     background-color: black;
 }
