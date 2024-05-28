@@ -1,7 +1,20 @@
-/* body {
-    background: #0D0D0D;
-    color: white
+.header-elem {
+    padding: 1%;
+    text-align: center;
 }
-a:link {
+
+body {
+
+}
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.body-elem {
+    padding: 1%;
+}
+
+/* a:link {
     
 } */
