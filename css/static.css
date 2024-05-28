@@ -1,9 +1,18 @@
+.header-elem {
+    padding: 1%;
+    text-align: center;
+}
+
 body {
 
 }
 .container {
     display: flex;
     flex-direction: row;
+}
+
+.body-elem {
+    padding: 1%;
 }
 
 /* a:link {
